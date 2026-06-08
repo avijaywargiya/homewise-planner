@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Local launcher & icons (desktop shortcut only)
+launch_homewise.bat
+homewise.ico
+homewise_preview.png
+homewise_preview_64.png
+
+# Streamlit local cache
+.streamlit/secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
