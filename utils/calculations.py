@@ -104,10 +104,10 @@ def calculate_affordability_metrics(
     remaining_savings = liquid_savings - total_cash_needed
 
     emergency_fund_monthly_expenses = monthly_non_housing_expenses + total_monthly_housing
-    emergency_fund_months_remaining = (
+    emergency_fund_months_remaining = max(0.0, (
         remaining_savings / emergency_fund_monthly_expenses
         if emergency_fund_monthly_expenses > 0 else 0
-    )
+    ))
 
     housing_pct_gross = (total_monthly_housing / gross_monthly_income * 100) if gross_monthly_income > 0 else 0
     housing_pct_net = (total_monthly_housing / after_tax_monthly_income * 100) if after_tax_monthly_income > 0 else 0
@@ -292,7 +292,7 @@ def calculate_rent_vs_buy(
         eq = fhv - rb - sc
         pp = loan_amount - rb
         mp = pi_payment * 12 * y
-        oop = closing_costs + (mp - pp) + fhv * (property_tax_rate / 100) / 12 * 12 * y + monthly_insurance * 12 * y + monthly_hoa * 12 * y + monthly_maintenance * 12 * y
+        oop = closing_costs + (mp - pp) + home_price * (property_tax_rate / 100) * y + monthly_insurance * 12 * y + monthly_hoa * 12 * y + monthly_maintenance * 12 * y
         b_net = eq - oop
 
         fv_up = calculate_future_value(upfront_cash, investment_return_pct, y)
