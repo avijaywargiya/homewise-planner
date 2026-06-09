@@ -31,7 +31,7 @@ st.set_page_config(
 )
 
 DISCLAIMER = (
-    "> **Disclaimer:** This tool is for educational planning purposes only and does not constitute "
+    "> **Disclaimer:** This tool is for illustration purposes only and does not constitute "
     "financial, mortgage, tax, or investment advice."
 )
 
@@ -894,7 +894,7 @@ def tab_summary(p: dict, aff: dict | None, rvb: dict | None, refi: dict | None, 
         md_lines = [
             "# HomeWise Planner — Summary Report",
             "",
-            "> This tool is for educational planning purposes only and does not constitute financial, mortgage, tax, or investment advice.",
+            "> This tool is for illustration purposes only and does not constitute financial, mortgage, tax, or investment advice.",
             "",
             "## Profile",
             f"- Gross monthly income: {fmt_dollar(p['gross_monthly'])}",
@@ -950,7 +950,7 @@ def tab_summary(p: dict, aff: dict | None, rvb: dict | None, refi: dict | None, 
             f"- Band: **{band}**",
             "",
             "---",
-            "> This tool is for educational planning purposes only and does not constitute financial, mortgage, tax, or investment advice.",
+            "> This tool is for illustration purposes only and does not constitute financial, mortgage, tax, or investment advice.",
         ]
 
         md_content = "\n".join(md_lines)
